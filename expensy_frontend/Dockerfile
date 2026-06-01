@@ -11,8 +11,8 @@ WORKDIR /app
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package*.json ./
-RUN npm ci --omit=dev
+COPY --from=builder /app/next.config.mjs ./
+RUN npm install --omit=dev
 
 EXPOSE 3000
-
-CMD ["npm", "start"]
+CMD ["npx", "next", "start"]
