@@ -1,5 +1,13 @@
 # 🧾 Expensy - End-to-End DevOps Deployment
 
+![CI/CD](https://github.com/ireneromero95/devops-expensy/actions/workflows/ci-cd.yaml/badge.svg)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
+
 A lightweight expense tracker app built with Next.js and Node/Express, deployed with a full DevOps lifecycle.
 
 ## 🛠️ Stack
