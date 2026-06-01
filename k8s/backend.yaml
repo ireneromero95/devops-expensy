@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: expensy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: ireneromero95/expensy-backend:a82faeb90d95dd87a829b6176bb26a7dabd05ce3
+          ports:
+            - containerPort: 8706
+          env:
+            - name: PORT
+              value: "8706"
+            - name: DATABASE_URI
+              valueFrom:
+                secretKeyRef:
+                  name: expensy-secrets
+                  key: DATABASE_URI
+            - name: REDIS_HOST
+              value: redis-service
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: expensy-secrets
+                  key: REDIS_PASSWORD
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: expensy
+spec:
+  selector:
+    app: backend
+  ports:
+    - port: 8706
+      targetPort: 8706

@@ -29,4 +29,4 @@ jobs:
         with:
           context: ./expensy_frontend
           push: true
-          tags: ireneromero95/expensy-backend:${{ github.sha }}
+          tags: ireneromero95/expensy-frontend:${{ github.sha }}
